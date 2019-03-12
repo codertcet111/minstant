@@ -13,15 +13,15 @@
     <nav class="navbar navbar-light bg-light d-flex">
       <div class="container">
         <div class="logo">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="<%= root_path %>">
             <%= fa_stacked_icon "camera inverse", base: "circle"%>
-            Minstant
+            Instagram
           </a>
         </div>
         <div class="m-auto">
-          <form class="form-inline search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="@search" aria-label="Search">
-          </form>
+          <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+            <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+          <% end %>
         </div>
         <div class="user-section">
           <a><i class="fa fa-compass"></i></a>
@@ -61,8 +61,8 @@
           <li>HASHTAGS</li>
           <li>LANGUAGE</li>
         </ul>
-        <p> © 2019 Minstant </p>
+        <p> © 2018 MINSTANT </p>
       </nav>
     </footer>
-  </body> 
+  </body>
 </html>
