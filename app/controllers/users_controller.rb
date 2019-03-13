@@ -14,6 +14,14 @@ class UsersController < ApplicationController
     redirect_to current_user
   end
 
+  def get_followers
+    current_user.followers
+  end
+
+  def get_followings
+    current_user.following
+  end
+
   private
 
   def user_params
