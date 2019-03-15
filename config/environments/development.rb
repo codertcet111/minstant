@@ -6,6 +6,22 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  #for Devise gem
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true # to raise error if smtp has error on setup
+  config.action_mailer.default charset: "utf-8"
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "mail.google.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: 'ramsmishra111@gmail.com',
+    password: 'Sm9930521129'
+  }
   # Do not eager load code on boot.
   config.eager_load = false
 

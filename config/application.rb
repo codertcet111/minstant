@@ -10,6 +10,15 @@ module Minstant
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    ActionMailer::Base.smtp_settings = {
+      :address => 'smtp.gmail.com',
+      :domain => 'mail.google.com',
+      :port => 587,
+      :user_name => 'ramsmishra111@gmail.com',
+      :password => 'Sm9930521129',
+      :authentication => 'login',
+      :enable_starttls_auto => true
+    }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
