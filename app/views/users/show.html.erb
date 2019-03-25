@@ -14,6 +14,11 @@
           <a class="edit-profile" href="<%= edit_user_path(@user) %>">
             <button>Edit Profile</button>
           </a>
+          <% if user_signed_in? %>
+            <a class="edit-profile" href="<%= destroy_user_session_path %>">
+              <button>Log Out</button>
+            </a>
+          <% end %>
         <% end %>
       </div>
       <ul class="posts">
@@ -31,18 +36,14 @@
       <i class="fa fa-th"></i>
       POSTS
     </a>
-    <a class="tab" href="">
+    <!-- <a class="tab" href="">
       <i class="fa fa-tv"></i>
-      IGTV
+      Followers
     </a>
     <a class="tab" href="">
       <i class="fa fa-bookmark"></i>
-      SAVED
-    </a>
-    <a class="tab" href="">
-      <i class="fa fa-tag"></i>
-      TAGGED
-    </a>
+      Following
+    </a> -->
   </div>
 
   <div class="user-images">
