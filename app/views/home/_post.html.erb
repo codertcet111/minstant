@@ -2,7 +2,7 @@
   <div class="user">
     <div class="avatar">
       <% if post.user.avatar.attached? %>
-        <%= link_to user_path(post.user) do %>
+        <%= link_to post.user.username, user_path(post.user) do %>
           <%= image_tag post.user.avatar %>
         <% end %>
       <% end %>
