@@ -19,6 +19,10 @@
               <button>Log Out</button>
             </a>
           <% end %>
+        <% elsif !@user.followers.include?(current_user) %>
+          <a class="edit-profile" href="<%= user_follow_url(@user.id)%>">
+            <button>Follow</button>
+          </a>
         <% end %>
       </div>
       <ul class="posts">

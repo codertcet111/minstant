@@ -22,6 +22,12 @@ class UsersController < ApplicationController
     current_user.following
   end
 
+  def save_follow
+    f1 = Follow.create(user_id: current_user.id, following_id: params['format'])
+    f1.save
+    redirect_to user_path(User.find(params['format']))
+  end
+
   private
 
   def user_params
