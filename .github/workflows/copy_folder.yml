@@ -10,13 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository A
+      - name: Checkout minstant
         uses: actions/checkout@v2
 
-      - name: Copy Folder to Repository B
+      - name: Create Target Directory in SaleSure
+        run: |
+          mkdir -p ../SaleSure/SaleTests
+
+      - name: Copy Folder to SaleSure
         run: |
           # Replace 'tmp' with the actual folder name
-          cp -r tmp/* ../SaleSure/SaleSureUITests
+          cp -r tmp/* ../SaleSure/SaleTests
 
         env:
           REPOSITORY_B_TOKEN: ${{ secrets.REPO_B_TOKEN }}
