@@ -17,10 +17,15 @@ jobs:
         run: |
           mkdir -p ../SaleSure/SaleTests
 
+      - name: List files before copy
+        run: ls -R tmp
+      
       - name: Copy Folder to SaleSure
         run: |
-          # Replace 'tmp' with the actual folder name
           cp -r tmp/* ../SaleSure/SaleTests
+      
+      - name: List files after copy
+        run: ls -R ../SaleSure/SaleTests
 
         env:
           REPOSITORY_B_TOKEN: ${{ secrets.REPO_B_TOKEN }}
