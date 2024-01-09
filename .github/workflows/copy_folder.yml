@@ -1,0 +1,22 @@
+name: Copy Folder on Merge
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  copy-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository A
+        uses: actions/checkout@v2
+
+      - name: Copy Folder to Repository B
+        run: |
+          # Replace 'tmp' with the actual folder name
+          cp -r tmp/* ../SaleSure/SaleSureUITests
+
+        env:
+          REPOSITORY_B_TOKEN: ${{ secrets.REPO_B_TOKEN }}
