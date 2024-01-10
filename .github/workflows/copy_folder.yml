@@ -21,6 +21,7 @@ jobs:
         with:
           repository: codertcet111/SaleSure
           ref: master
+          token: ${{ secrets.REPO_B_TOKEN }}
 
       - name: Create Target Directory in SaleSure
         run: |
