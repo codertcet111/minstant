@@ -27,15 +27,15 @@ jobs:
         run: |
           mkdir -p SaleSure/SaleTests
 
-      - name: List files before copy
-        run: ls -R tmp
+      # - name: List files before copy
+      #   run: ls -R minstant/tmp
 
       - name: Copy Folder to SaleSure
         run: |
-          cp -r tmp/* SaleSure/SaleTests
+          cp -r minstant/tmp/* SaleSure/SaleTests
 
-      - name: List files after copy
-        run: ls -R SaleSure/SaleTests
+      # - name: List files after copy
+      #   run: ls -R SaleSure/SaleTests
 
       - name: Commit and Push Changes to SaleSure
         run: |
