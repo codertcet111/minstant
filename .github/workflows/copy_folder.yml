@@ -32,6 +32,8 @@ jobs:
 
       - name: Copy Folder to SaleSure
         run: |
+          pwd
+          ls
           cp -r minstant/tmp/* SaleSure/SaleTests
 
       # - name: List files after copy
