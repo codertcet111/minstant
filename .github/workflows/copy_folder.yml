@@ -18,7 +18,12 @@ jobs:
 
       - name: Come out of minstant
         run: |
+          pwd
+          ls
           cd ../..
+          pwd
+          ls
+          pwd
 
       - name: Checkout SaleSure
         uses: actions/checkout@v2
@@ -29,7 +34,12 @@ jobs:
 
       - name: Come out of SaleSure
         run: |
+          pwd
+          ls
           cd ../..
+          pwd
+          ls
+          pwd
 
       - name: Create Target Directory in SaleSure
         run: |
