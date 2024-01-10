@@ -10,12 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout minstant and SaleSure
+      - name: Checkout minstant
         uses: actions/checkout@v2
         with:
-          repository: |
-            codertcet111/minstant
-            codertcet111/SaleSure
+          repository: codertcet111/minstant
+
+      - name: Checkout SaleSure
+        uses: actions/checkout@v2
+        with:
+          repository: codertcet111/SaleSure
 
       - name: Create Target Directory in SaleSure
         run: |
