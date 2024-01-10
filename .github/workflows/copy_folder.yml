@@ -10,22 +10,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout minstant
+      - name: Checkout minstant and SaleSure
         uses: actions/checkout@v2
+        with:
+          repositories: |
+            codertcet111/minstant
+            codertcet111/SaleSure
 
       - name: Create Target Directory in SaleSure
         run: |
-          mkdir -p ../SaleSure/SaleTests
+          mkdir -p SaleSure/SaleTests
 
       - name: List files before copy
-        run: ls -R tmp
-      
+        run: ls -R minstant/tmp
+
       - name: Copy Folder to SaleSure
         run: |
-          cp -r tmp/* ../SaleSure/SaleTests
-      
+          cp -r minstant/tmp/* SaleSure/SaleTests
+
       - name: List files after copy
-        run: ls -R ../SaleSure/SaleTests
+        run: ls -R SaleSure/SaleTests
+
+      - name: Commit and Push Changes to SaleSure
+        run: |
+          cd SaleSure
+          git config user.name "Shubham Actions"
+          git config user.email "shubham@mishra.com"
+          git add .
+          git commit -m "Copy folder from minstant on pull request close"
+          git push origin master
 
         env:
           REPOSITORY_B_TOKEN: ${{ secrets.REPO_B_TOKEN }}
