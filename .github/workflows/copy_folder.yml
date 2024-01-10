@@ -16,6 +16,10 @@ jobs:
           repository: codertcet111/minstant
           ref: master
 
+      - name: Come out of minstant
+        run: |
+          cd ../..
+
       - name: Checkout SaleSure
         uses: actions/checkout@v2
         with:
@@ -23,36 +27,21 @@ jobs:
           ref: master
           token: ${{ secrets.REPO_B_TOKEN }}
 
+      - name: Come out of SaleSure
+        run: |
+          cd ../..
+
       - name: Create Target Directory in SaleSure
         run: |
-          mkdir -p SaleSure/SaleTests
-
-      # - name: List files before copy
-      #   run: ls -R minstant/tmp
+          mkdir -p SaleSure/SaleSure/SaleTests
 
       - name: Copy Folder to SaleSure
         run: |
-          pwd
-          ls
-          pwd
-          ls SaleSure
-          pwd
-          cd ..
-          pwd
-          ls
-          pwd
-          cd minstant
-          pwd
-          ls -R minstant/minstant/tmp
-          pwd
-          cp -r minstant/tmp/* SaleSure/SaleTests
-
-      # - name: List files after copy
-      #   run: ls -R SaleSure/SaleTests
+          cp -r minstant/minstant/tmp/* SaleSure/SaleSure/SaleTests
 
       - name: Commit and Push Changes to SaleSure
         run: |
-          cd SaleSure
+          cd SaleSure/SaleSure
           git config user.name "Shubham Actions"
           git config user.email "shubham@mishra.com"
           git add .
