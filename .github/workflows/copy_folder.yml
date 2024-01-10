@@ -13,7 +13,7 @@ jobs:
       - name: Checkout minstant and SaleSure
         uses: actions/checkout@v2
         with:
-          repositories: |
+          repository: |
             codertcet111/minstant
             codertcet111/SaleSure
 
