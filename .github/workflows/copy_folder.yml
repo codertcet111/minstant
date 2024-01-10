@@ -37,6 +37,8 @@ jobs:
 
       - name: Copy Folder to SaleSure
         run: |
+          pwd
+          ls
           cp -r minstant/minstant/tmp/* SaleSure/SaleSure/SaleTests
 
       - name: Commit and Push Changes to SaleSure
