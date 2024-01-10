@@ -14,11 +14,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: codertcet111/minstant
+          ref: master
 
       - name: Checkout SaleSure
         uses: actions/checkout@v2
         with:
           repository: codertcet111/SaleSure
+          ref: master
 
       - name: Create Target Directory in SaleSure
         run: |
